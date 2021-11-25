@@ -3,5 +3,17 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="quest" class="cn.wayne.SlayDragonQuest">
+        <constructor-arg value="#{T(System).out}"/>
+    </bean>
+
+    <bean id="minstrel" class="cn.wayne.Minstrel">
+        <constructor-arg value="#{T(System).out}"/>
+    </bean>
+
+    <bean id="knight" class="cn.wayne.BraveKnight">
+        <constructor-arg ref="quest"/>
+        <constructor-arg ref="minstrel"/>
+    </bean>
 
 </beans>

@@ -18,11 +18,4 @@ public class DamselRescuingKnight implements Knight{
         quest.embark();
     }
 
-    public void setQuest(RescueDamselQuest quest) {
-        this.quest = quest;
-    }
-
-    public RescueDamselQuest getQuest() {
-        return quest;
-    }
 }

@@ -5,6 +5,7 @@ package cn.wayne;
  */
 public class BraveKnight implements Knight{
     private Quest quest;
+    private Minstrel minstrel;
 
     /**
      * 构造器注入
@@ -15,8 +16,15 @@ public class BraveKnight implements Knight{
         this.quest = quest;
     }
 
+    public BraveKnight(Quest quest, Minstrel minstrel) {
+        this.quest = quest;
+        this.minstrel = minstrel;
+    }
+
     @Override
     public void embarkOnQuest() {
+        minstrel.singBeforeQuest();
         quest.embark();
+        minstrel.singAfterQuest();
     }
 }

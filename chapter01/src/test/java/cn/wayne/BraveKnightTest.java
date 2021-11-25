@@ -1,18 +1,48 @@
 package cn.wayne;
 
+import cn.wayne.config.KnightConfig;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.mockito.Mockito.*;
-@RunWith(SpringJUnit4ClassRunner.class)
-class BraveKnightTest {
 
+public class BraveKnightTest {
+
+    /**
+     * 手动注入
+     */
     @Test
-    void embarkOnQuest() {
+    public void embarkOnQuest() {
         Quest mock = mock(Quest.class);
-        BraveKnight braveKnight = new BraveKnight(mock);
-        braveKnight.embarkOnQuest();
-        verify(mock,times(1)).embark();
+        BraveKnight knight = new BraveKnight(mock);
+        knight.embarkOnQuest();
+        verify(mock, times(1)).embark();
+    }
+
+    /**
+     * 使用xml的方式实现ioc
+     */
+    @Test
+    public void testXMLAutowired(){
+        ClassPathXmlApplicationContext context
+                = new ClassPathXmlApplicationContext("classpath:knight.xml");
+        Knight knight = context.getBean(Knight.class);
+        knight.embarkOnQuest();
+        context.close();
+    }
+
+    /**
+     * 使用注解的方式实现ioc
+     */
+    @Test
+    public void testAnnotationAutowired(){
+        AnnotationConfigApplicationContext context
+                = new AnnotationConfigApplicationContext();
+        context.register(KnightConfig.class);
+        context.refresh();
+        Knight knight = context.getBean(Knight.class);
+        knight.embarkOnQuest();
+        context.close();
     }
 }
