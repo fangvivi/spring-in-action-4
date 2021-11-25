@@ -12,8 +12,6 @@ public class Minstrel {
         this.printStream = printStream;
     }
 
-    public Minstrel() {
-    }
 
     public void singBeforeQuest(){
         printStream.println("怪物：听说你很勇哦？");
