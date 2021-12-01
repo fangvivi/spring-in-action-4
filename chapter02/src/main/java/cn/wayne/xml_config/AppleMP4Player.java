@@ -1,7 +1,7 @@
 package cn.wayne.xml_config;
 
 /**
- * 演示xml
+ * 演示xml实现构造器注入bean引用
  * @author wayne
  */
 public class AppleMP4Player implements MP4Player{

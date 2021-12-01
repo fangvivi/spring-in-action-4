@@ -74,6 +74,5 @@ fabric.properties
 
 /spring-in-action-4.iml
 /.idea/
-/chapter01/target/
 *.iml
-/chapter02/target/
+*/target/

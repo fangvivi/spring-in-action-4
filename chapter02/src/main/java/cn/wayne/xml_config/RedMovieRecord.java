@@ -3,17 +3,23 @@ package cn.wayne.xml_config;
 import java.util.List;
 
 /**
- * 演示xml实现构造器注入，并注装配集合
+ * 演示xml把字面量注入属性中
  * @author wayne
  */
-public class BlackMovieRecord implements MovieRecord{
+public class RedMovieRecord implements MovieRecord{
     private String title;
     private String artist;
     private List<String> scenes;
 
-    public BlackMovieRecord(String title, String artist, List<String> scenes) {
+    public void setTitle(String title) {
         this.title = title;
+    }
+
+    public void setArtist(String artist) {
         this.artist = artist;
+    }
+
+    public void setScenes(List<String> scenes) {
         this.scenes = scenes;
     }
 

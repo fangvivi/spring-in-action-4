@@ -18,7 +18,7 @@
 
     <!--c命名空间可以简化构造器注入，注入字面量，c:属性名称 -->
     <bean id="goodMovieRecord2" class="cn.wayne.xml_config.GoodMovieRecord"
-        c:title="地雷战" c:artist="中国优秀抗战影片"/>
+          c:title="地雷战" c:artist="中国优秀抗战影片"/>
 
     <!-- _0表示第一个属性 _1表示第二个属性，这两个属性都是String类型的 -->
     <bean id="goodMovieRecord3" class="cn.wayne.xml_config.GoodMovieRecord"
@@ -71,7 +71,7 @@
     <!--使用p命名空间来注入属性-->
     <bean id="redMovieRecord2"
           class="cn.wayne.xml_config.RedMovieRecord"
-    p:artist="白蛇传" p:title="中国民间爱情故事">
+          p:artist="白蛇传" p:title="中国民间爱情故事">
         <property name="scenes">
             <list>
                 <value>断桥相遇</value>
@@ -86,7 +86,7 @@
           class="cn.wayne.xml_config.RedMovieRecord"
           p:artist="白蛇传"
           p:title="中国民间爱情故事"
-    p:scenes-ref="scenesList"/>
+          p:scenes-ref="scenesList"/>
 
     <util:list id="scenesList">
         <value>断桥相遇</value>
