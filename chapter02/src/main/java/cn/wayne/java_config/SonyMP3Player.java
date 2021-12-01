@@ -6,12 +6,11 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author wayne
- * Autowired 注解可以在spring应用上下文中寻找某个满足需求的其他bean
- * 这个注解可以用在类的任何方法上，构造器、set方法、自定义的为属性的赋值的方法
+ *
  */
-@Component
-public class CDPlayer implements MediaPlayer {
-    private CompactDisc cd;
+
+public class SonyMP3Player implements MP3Player {
+    private SongRecord cd;
 
 
     /**
@@ -20,7 +19,7 @@ public class CDPlayer implements MediaPlayer {
      * @param cd
      */
     @Autowired
-    public CDPlayer(CompactDisc cd) {
+    public SonyMP3Player(SongRecord cd) {
         this.cd = cd;
     }
 
@@ -30,11 +29,4 @@ public class CDPlayer implements MediaPlayer {
 
     }
 
-    public CompactDisc getCd() {
-        return cd;
-    }
-
-    public void setCd(CompactDisc cd) {
-        this.cd = cd;
-    }
 }

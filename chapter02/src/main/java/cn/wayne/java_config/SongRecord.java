@@ -3,6 +3,6 @@ package cn.wayne.java_config;
 /**
  * @author wayne
  */
-public interface CompactDisc {
+public interface SongRecord {
     void play();
 }

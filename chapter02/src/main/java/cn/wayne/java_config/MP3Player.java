@@ -3,6 +3,6 @@ package cn.wayne.java_config;
 /**
  * @author wayne
  */
-public interface MediaPlayer {
+public interface MP3Player {
     void play();
 }

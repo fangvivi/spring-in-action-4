@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--使用这个类默认的构造来创建bean-->
+    <bean id="goodMovieRecord" class="cn.wayne.xml_config.GoodMovieRecord">
+        <constructor-arg value="地道战" />
+        <constructor-arg value="中国电影艺术家" />
+    </bean>
+
+    <!--使用c命名空间简化构造器注入配置，c:属性名称 -->
+    <bean id="goodMovieRecord2" class="cn.wayne.xml_config.GoodMovieRecord"
+        c:title="地雷战" c:artist="中国电影艺术家"/>
+
+    <!-- _0表示第一个属性 _1表示第二个属性，这两个属性都是String类型的 -->
+    <bean id="goodMovieRecord3" class="cn.wayne.xml_config.GoodMovieRecord"
+          c:_0="铁道游击队" c:_1="中国电影艺术家"/>
+
+    <!--c命名空间无法实现集合装配-->
+    <bean id="blackMovieRecord" class="cn.wayne.xml_config.BlackMovieRecord">
+        <constructor-arg value="盗梦空间"/>
+        <constructor-arg value="小李子"/>
+        <constructor-arg>
+            <list>
+                <value>准备入梦</value>
+                <value>入梦</value>
+                <value>入梦枪战</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- 普通命名空间方式-->
+    <bean id="appleMP4Player" class="cn.wayne.xml_config.AppleMP4Player">
+        <constructor-arg ref="goodMovieRecord" />
+    </bean>
+
+    <!-- _0表示第一个构造参数 ref表示注入bean的引用 -->
+    <bean id="appleMP4Player2" class="cn.wayne.xml_config.AppleMP4Player"
+          c:_0-ref="goodMovieRecord2" />
+
+    <!-- 属性注入-->
+    <bean id="orangeMP4Player" class="cn.wayne.xml_config.OrangeMP4Player">
+        <property name="movieRecord" ref="goodMovieRecord2"/>
+    </bean>
+
+    <!--使用p命名空间简化属性注入配置，movieRecord表示属性名称-->
+    <bean id="orangeMP4Player2" class="cn.wayne.xml_config.OrangeMP4Player"
+          p:movieRecord-ref="goodMovieRecord2"/>
+
+
+
+</beans>

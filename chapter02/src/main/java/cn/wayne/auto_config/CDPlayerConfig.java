@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 // @ComponentScan(basePackages = "cn.wayne.auto_config")
-// @ComponentScan(basePackageClasses = {SgtPeppers.class})
+// @ComponentScan(basePackageClasses = {GoodSongRecord.class})
 
 @Configuration
 @ComponentScan("cn.wayne.auto_config")
