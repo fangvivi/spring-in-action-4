@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="pop" class="cn.wayne.mix_config.Pop"
+          c:_0="醉赤壁"
+          c:_1="JJ LIn">
+        <constructor-arg>
+            <list>
+                <value>确认过眼神</value>
+                <value>我遇上对的人</value>
+                <value>我挥剑转身</value>
+                <value>而鲜血如红唇</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
