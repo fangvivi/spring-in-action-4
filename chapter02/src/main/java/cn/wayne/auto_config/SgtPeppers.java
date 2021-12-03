@@ -1,6 +1,5 @@
 package cn.wayne.auto_config;
 
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Component;
  */
 
 // @Component
-@Component("aCD")
+@Component("yiYongJunJinXingQu")
 public class SgtPeppers implements CompactDisc{
 
     private String title = "义勇军进行曲";
@@ -20,6 +19,6 @@ public class SgtPeppers implements CompactDisc{
 
     @Override
     public void play() {
-        System.out.println("Playing " + title + " by " + artist);
+        System.out.println("playing " + title + " by " + artist);
     }
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- setter注入bean引用-->
+    <bean id="Inception-Ipod" class="cn.wayne.xml_config.WarMoviePlayer">
+        <property name="movie" ref="Inception" />
+    </bean>
+
+
+    <!-- 使用c命名空间为构造器注入字面量，注意c命名空间无法直接注入集合，
+    这里利用普通的命名空间来注入集合，集合可以使用util命名空间元素来实现引用-->
+    <bean id="Inception"
+          class="cn.wayne.xml_config.scienceFictionMovie"
+          c:title="盗梦空间"
+          c:_1="优秀科幻电影" >
+        <constructor-arg name="roles" ref="roleList"/>
+    </bean>
+
+    <util:list id="roleList">
+        <value>莱昂纳多·迪卡普里奥</value>
+        <value>约瑟夫·高登-莱维特</value>
+        <value>汤姆·哈迪</value>
+    </util:list>
+
+
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 普通命名空间方式，构造器注入bean引用-->
+    <bean id="Inception-Ipod" class="cn.wayne.xml_config.Ipod">
+        <constructor-arg ref="Inception" />
+    </bean>
+
+    <!--c命名空间无法实现集合装配，构造器注入字面量和集合-->
+    <bean id="Inception" class="cn.wayne.xml_config.scienceFictionMovie">
+        <constructor-arg value="盗梦空间"/>
+        <constructor-arg value="优秀科幻电影"/>
+        <constructor-arg>
+            <list>
+                <value>莱昂纳多·迪卡普里奥</value>
+                <value>约瑟夫·高登-莱维特</value>
+                <value>汤姆·哈迪</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+
+</beans>

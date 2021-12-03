@@ -1,7 +1,6 @@
-package java_config;
+package xml_config;
 
-import cn.wayne.java_config.MP3Player;
-import cn.wayne.java_config.MP3PlayerConfig;
+import cn.wayne.xml_config.MP4Player;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,18 +8,16 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * 测试基于Java的显示配置的自动装配
+ * 测试使用c命名空间的元素为bean的构造方法注入字面量
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = MP3PlayerConfig.class)
-public class MP3PlayerTest {
-
+@ContextConfiguration(locations = {"classpath:c-namespace-config-test.xml"})
+public class XMLCNameSpaceTest {
     @Autowired
-    private MP3Player mp3Player;
+    private MP4Player mp4Player;
 
     @Test
-    public void play(){
-        mp3Player.play();
+    public void playTest(){
+        mp4Player.play();
     }
-
 }

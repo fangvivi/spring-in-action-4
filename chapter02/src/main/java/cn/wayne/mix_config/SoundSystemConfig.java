@@ -4,8 +4,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 
-import javax.annotation.Resource;
-
 /**
  * @author wayne
  * 自动装配并不会在意bean来自于哪里，不管是在JavaConfig或是XML中声明的

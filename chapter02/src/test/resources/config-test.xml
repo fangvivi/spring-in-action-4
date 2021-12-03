@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- 普通命名空间方式，构造器注入bean引用-->
+    <bean id="tunnelBattle-Ipod" class="cn.wayne.xml_config.Ipod">
+        <constructor-arg ref="tunnelBattle" />
+    </bean>
+
+    <!--使用默认的构造来创建bean，注入字面量-->
+    <bean id="tunnelBattle" class="cn.wayne.xml_config.WarMovie">
+        <constructor-arg value="地道战" />
+        <constructor-arg value="中国优秀影片" />
+    </bean>
+
+
+</beans>

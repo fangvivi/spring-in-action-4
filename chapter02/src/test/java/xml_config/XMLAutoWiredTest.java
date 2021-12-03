@@ -1,26 +1,27 @@
 package xml_config;
 
-import cn.wayne.xml_config.AppleMP4Player;
+import cn.wayne.xml_config.Ipod;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static junit.framework.TestCase.assertNotNull;
 
+/**
+ * 测试基于xml的显示配置为构造器注入字面量和引用
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:*.xml"})
-public class MP4PlayerTest {
+@ContextConfiguration(locations = {"classpath:config-test.xml"})
+public class XMLAutoWiredTest {
 
     @Autowired
-    private AppleMP4Player appleMP4Player;
+    private Ipod ipod;
     @Test
-    public void Mp4PlayerTest(){
-
-        assertNotNull(appleMP4Player);
+    public void IpodTest(){
+        assertNotNull(ipod);
+        ipod.play();
     }
 
 }

@@ -9,6 +9,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import static junit.framework.TestCase.assertFalse;
+
 @ContextConfiguration(locations = {"classpath:cd-config-test.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class SameTypeBeanTest {
@@ -22,9 +24,9 @@ public class SameTypeBeanTest {
                 new ClassPathXmlApplicationContext("classpath:cd-config-test.xml");
         CompactDisc qingHuaCi = context.getBean("QingHuaCi", Pop.class);
         CompactDisc qhc = context.getBean("QHC", Pop.class);
-        // 输出false，证明同一个xml中的一个类，配置成多个id不同的bean，
+        // false，证明同一个xml中的一个类，配置成多个id不同的bean，
         // 实际从spring容器中取到的bean对象地址是不同的
-        System.out.println(qingHuaCi==qhc);
+        assertFalse(qingHuaCi==qhc);
 
 
     }

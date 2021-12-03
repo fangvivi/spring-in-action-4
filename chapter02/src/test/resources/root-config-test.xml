@@ -9,7 +9,7 @@
     <!-- <context:component-scan base-package="cn.wayne"/> -->
 
     <!--这样可以直接把JavaConfig类导入XML中-->
-    <!--<bean class="cn.wayne.mix_config.CDconfig"/>-->
+    <bean class="cn.wayne.mix_config.CDconfig"/>
 
     <!--import元素可以导入其他的xml配置文件，
     配置bean的id=WMPlayer，指定需要注入bean的id为QingHuaCi-->

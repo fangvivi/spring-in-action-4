@@ -6,10 +6,10 @@ import java.util.List;
  * 演示xml把字面量注入属性中
  * @author wayne
  */
-public class RedMovieRecord implements MovieRecord{
+public class LoveMovie implements Movie {
     private String title;
     private String artist;
-    private List<String> scenes;
+    private List<String> roles;
 
     public void setTitle(String title) {
         this.title = title;
@@ -19,15 +19,15 @@ public class RedMovieRecord implements MovieRecord{
         this.artist = artist;
     }
 
-    public void setScenes(List<String> scenes) {
-        this.scenes = scenes;
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
     }
 
     @Override
     public void play() {
-        System.out.println("Playing " + title + " by " + artist);
-        for (String scene : scenes){
-            System.out.println("Scene: " + scene);
+        System.out.println("playing " + title + " by " + artist);
+        for (String role : roles){
+            System.out.println("Role: " + role);
         }
     }
 }

@@ -1,7 +1,6 @@
-package java_config;
+package xml_config;
 
-import cn.wayne.java_config.MP3Player;
-import cn.wayne.java_config.MP3PlayerConfig;
+import cn.wayne.xml_config.Ipod;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,18 +8,16 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * 测试基于Java的显示配置的自动装配
+ * 测试使用xml方式给构造器注入集合和字面量
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = MP3PlayerConfig.class)
-public class MP3PlayerTest {
-
+@ContextConfiguration(locations = {"classpath:autowired-collection-config-test.xml"})
+public class XMLAutoWiredCollectionTest {
     @Autowired
-    private MP3Player mp3Player;
+    private Ipod ipod;
 
     @Test
     public void play(){
-        mp3Player.play();
+        ipod.play();
     }
-
 }

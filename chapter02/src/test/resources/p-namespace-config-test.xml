@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--构造器注入bean引用-->
+    <bean id="tunnelBattle-Ipod" class="cn.wayne.xml_config.Ipod">
+        <constructor-arg ref="Titanic" />
+    </bean>
+
+    <!--使用p命名空间为bean装配属性，注入字面量，和c命名空间一样，p命名空间无法注入集合-->
+    <bean id="Titanic" class="cn.wayne.xml_config.LoveMovie"
+          p:artist="好莱坞"
+          p:title="泰坦尼克号">
+        <property name="roles">
+            <list>
+                <value>莱昂纳多·迪卡普里奥</value>
+                <value>凯特·温斯莱特</value>
+                <value>格洛莉娅·斯图亚特</value>
+            </list>
+        </property>
+    </bean>
+
+
+</beans>
