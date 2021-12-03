@@ -15,7 +15,8 @@ public class BraveKnightTest {
     @Test
     public void embarkOnQuest() {
         Quest mock = mock(Quest.class);
-        BraveKnight knight = new BraveKnight(mock);
+        Minstrel minstrel = mock(Minstrel.class);
+        BraveKnight knight = new BraveKnight(mock,minstrel);
         knight.embarkOnQuest();
         verify(mock, times(1)).embark();
     }
