@@ -1,6 +1,7 @@
 package cn.wayne.mix_config;
 
 /**
+ * acg歌曲
  * @author wayne
  */
 public class ACG implements CompactDisc{

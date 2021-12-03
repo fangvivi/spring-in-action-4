@@ -11,11 +11,10 @@
     <!--这样可以直接把JavaConfig类导入XML中-->
     <!--<bean class="cn.wayne.mix_config.CDconfig"/>-->
 
-    <!--import元素可以导入其他的xml配置文件-->
+    <!--import元素可以导入其他的xml配置文件，
+    配置bean的id=WMPlayer，指定需要注入bean的id为QingHuaCi-->
     <import resource="cdplayer-config.xml"/>
 
+    <!--配置的bean的id=QingHuaCi-->
     <import resource="cd-config.xml"/>
-    <!--虽然CDconfig类和cd-config.xml构造了CD对象，
-    但是cdplayer-config.xml构造的对象需要注入的bean已经指明了id为pop-->
-    <bean class="cn.wayne.mix_config.CDconfig"/>
 </beans>

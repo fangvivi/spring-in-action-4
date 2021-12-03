@@ -8,10 +8,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- *
+ * 测试使用一个root-config.xml来管理其他的xml配置文件
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:root-config.xml"})
+@ContextConfiguration(locations = {"classpath:root-config-test.xml"})
 public class RootConfigXMLTest {
     @Autowired
     private MediaPlayer player;

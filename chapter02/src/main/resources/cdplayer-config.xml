@@ -6,6 +6,6 @@
 
     <bean id="player"
           class="cn.wayne.mix_config.WalkManPlayer"
-          c:cd-ref="compactDisc"/>
+          c:cd-ref="acg"/>
 
 </beans>

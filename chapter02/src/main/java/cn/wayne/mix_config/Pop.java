@@ -3,6 +3,7 @@ package cn.wayne.mix_config;
 import java.util.List;
 
 /**
+ * 流行歌曲
  * @author wayne
  */
 public class Pop implements CompactDisc{
