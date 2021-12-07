@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+/**
+ * 测试@primary和@Qualifier消除自动装配歧义
+ */
 @ContextConfiguration(classes = DessertConfig.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 public class BoyEatDessertTest {
