@@ -1,6 +1,5 @@
 package cn.wayne.java_config;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -29,12 +28,9 @@ public class MP3PlayerConfig {
      * 如果存在多个同类型的bean，自动装配会出现问题，因为spring不知道如何选择，
      * 这时可以使用@Primary注解，指定注入的bean，消除歧义
      *
-     * 或者使用@Qualifier给每个bean制定一个限定名，在被注入的bean上也是用@Qualifier注解指定
-     * 注入的bean的限定名
      */
     @Bean
     @Primary
-    @Qualifier("walkman")
     public MP3Player cdPlayer(){
         return new SonyMP3Player(goodSongRecord());
     }
@@ -45,7 +41,6 @@ public class MP3PlayerConfig {
      * 它会自动装配一个SongRecord到配置方法中
      */
     @Bean
-    @Qualifier("ipod")
     public MP3Player getPlayer(SongRecord cd){
 
         return new SonyMP3Player(cd);

@@ -8,7 +8,7 @@ public class IceCream implements Dessert{
 
 
     @Override
-    public void name(String name) {
-        System.out.println("this is icecream");
+    public void name() {
+        System.out.println("this is iceCream");
     }
 }
