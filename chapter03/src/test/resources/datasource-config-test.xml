@@ -16,10 +16,9 @@
     </beans>
 
     <beans profile="prod">
-        <jee:jndi-lookup id="dataSource"
+        <jee:jndi-lookup id="dataSource" lazy-init="true"
                          jndi-name="jdbc/myDatabase"
                          resource-ref="true"
-                         lazy-init="true"
                          proxy-interface="javax.sql.DataSource"/>
     </beans>
 </beans>
