@@ -1,4 +1,4 @@
-package spittr.config;
+package cn.wayne.spittr.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -18,7 +18,7 @@ public class SpittrWebAppInitializer
      */
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[0];
+        return new Class[]{RootConfig.class};
     }
 
     /**
@@ -28,7 +28,7 @@ public class SpittrWebAppInitializer
      */
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[0];
+        return new Class[]{WebConfig.class};
     }
 
     /**
