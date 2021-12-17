@@ -5,10 +5,10 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 /**
  * @author wayne
  * AbstractAnnotationConfigDispatcherServletInitializer
- * 会同时创建DispatcherServlet 和 ContextLoaderLister
+ * 会同时创建DispatcherServlet 和 ContextLoaderListener
  * DispatcherServlet 启动的时候会创建Spring应用上下文，加载配置文件或者配置类中声明的bean,
  * 这个类会加载包含Web组建的bean，如控制器、视图解析器、处理器映射
- * ContextLoaderLister要加载其他的bean，包含驱动应用后端的中间层和数据层组件
+ * ContextLoaderListenerr要加载其他的bean，包含驱动应用后端的中间层和数据层组件
  */
 public class SpittrWebAppInitializer
         extends AbstractAnnotationConfigDispatcherServletInitializer {

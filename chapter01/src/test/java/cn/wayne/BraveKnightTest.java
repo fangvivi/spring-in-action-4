@@ -34,14 +34,20 @@ public class BraveKnightTest {
     }
 
     /**
-     * 使用注解的方式实现ioc
+     * 使用注解的方式实现ioc，
+     * 下面两种写法的作用是相同的
      */
     @Test
     public void testAnnotationAutowired(){
+        /*
         AnnotationConfigApplicationContext context
                 = new AnnotationConfigApplicationContext();
         context.register(KnightConfig.class);
         context.refresh();
+        */
+        AnnotationConfigApplicationContext context
+                = new AnnotationConfigApplicationContext(KnightConfig.class);
+
         Knight knight = context.getBean(Knight.class);
         knight.embarkOnQuest();
         context.close();
