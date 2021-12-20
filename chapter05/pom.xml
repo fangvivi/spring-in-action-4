@@ -45,6 +45,11 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.junit</groupId>
+            <artifactId>junit-bom</artifactId>
+            <scope>import</scope>
+        </dependency>
     </dependencies>
 
 </project>
