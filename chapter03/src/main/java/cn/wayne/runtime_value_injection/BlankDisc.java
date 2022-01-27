@@ -19,4 +19,12 @@ public class BlankDisc {
     public String getArtist() {
         return artist;
     }
+
+    @Override
+    public String toString() {
+        return "BlankDisc{" +
+                "title='" + title + '\'' +
+                ", artist='" + artist + '\'' +
+                '}';
+    }
 }

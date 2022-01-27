@@ -10,8 +10,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Student {
 
+    @Value("${name}")
     private String name;
-
+    @Value("${title}")
     private String title;
 
     public Student(

@@ -2,6 +2,7 @@ package cn.wayne.runtime_value_injection.spel;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,9 +10,10 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Getter
+@PropertySource(value = "classpath:app.properties")
 public class SPELBlankDisc {
-    @Value("#{systemEnvironment['disc.title']}")
+    @Value("#{configProperties['disc.title']}")
     private String title;
-    @Value("#{systemEnvironment['disc.artist']}")
+    @Value("#{configProperties['disc.artist']}")
     private String artist;
 }
